@@ -20,8 +20,8 @@ Both these folders have their seperate **requirement.txt** files.
 #### Change directory to each of these folder and run the following commands step by step
 ```python
 1. python -m venv venv
-2. pip install -r requirements.txt
-3. venv\Scripts\activate
+2. venv\Scripts\activate
+3. pip install -r requirements.txt
 ```
 #### Note: Commands for command prompt
 
