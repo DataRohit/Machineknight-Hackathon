@@ -70,3 +70,20 @@ gunicorn==20.1.0
  9. Initializing and Training AutoSklearn Regressor. The same model was trained from 1Hr and 2Hr. The 2Hr model performed slightly better and thus was used for making the predictions.
  10. Custom function to calculate `RMSE`, `R2` and `Adjusted R2` score for checking the performance of the model.
  11. Saving the trained model and trained encoders.
+
+# API - Working
+#### Test the API (Open in Browser)  - https://machineknight-house-price.herokuapp.com/docs
+### Base Path (https://machineknight-house-price.herokuapp.com/)
+This base path is a path which supports GET request but it redirects to the `/docs` path which provides a GUI interface to test and play with the API. This path returns the HTML of the "/docs" page but works if the link is opened in Browser.
+### Get Object Features (https://machineknight-house-price.herokuapp.com/get_features/object_features)
+This past supports GET Request and it returns the Object / Categorical columns that are expected as Input and their expected values in the form of list.
+### Get Number Features (https://machineknight-house-price.herokuapp.com/get_features/numerical_features)
+This path supports GET Request and it return the Numerical columns that are expected as Input and their expected values in the form of list which is the range where the first value being the minimum and second being maximum. The max and min values was calculated from the complete data that was used for training and testing of the model.
+### Predict House Rent (https://machineknight-house-price.herokuapp.com/predict/rent)
+This path supports POST Request and it expects 18 different values as query parameters. Once successfully making the request without any error or fault values the model returns a dictionary of the the values that were given as the input and the predicted house rent.
+
+# Screenshots
+|    |    |
+| ---| ---|
+|![Screenshot](/images/FastAPI-Swagger-UI-1.png)| ![Screenshot](/images/FastAPI-Swagger-UI-2.png) |
+|![Screenshot](/images/FastAPI-Swagger-UI-3.png)| ![Screenshot](/images/FastAPI-Swagger-UI-4.png) |
