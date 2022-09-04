@@ -40,6 +40,8 @@ One all the packages are installed you are ready to go.
 
 **Solution to the Auto-Sklearn Problem - Luckily the servers running Google Colab and Heroku (Used for API hosting) both use Linux based servers for hosting.**
 
+## The API for the model has been hosted using Heroku.<br/>View the Interactive API playground by clicking the link - [Mahineknight-house-price](https://machineknight-house-price.herokuapp.com/)
+
 # Requiremnts.txt
 ## Data Processing & Model Training
 ```python
@@ -55,4 +57,16 @@ auto-sklearn==0.14.7
 gunicorn==20.1.0
 ```
 
-### The API for the model has been hosted using Heroku.<br/>View the Interactive API playground by clicking the link - [Mahineknight-house-price](https://machineknight-house-price.herokuapp.com/)
+# Data Processing
+### The following steps were followed in order to model the data in the desired format followed by training and testing of the model:
+ 1. Dropping `id`, `activation_data` and `locality` column from the data as they did not have much effect on the rent <br/>Model was trained and tested with and withot `locality` column the model performance did not seemed to be affected.
+ 2. `amenities` columns has stored in the form of stringified dictionary. Extracting that data and adding to original dataset.
+ 3. Dropping the repeated columns. Some columns which are present in data are also in amenities so Dropping them.
+ 4. All the features extracted from `amenities` are binary. So Assuming more the ammenities higher will be the price. So summing up all the amenities binary feature to make one single feature.
+ 5. Dropping the ineffective columns and preparing the data for encoding of categorical columns.
+ 6. Seperating the target and features from the data.
+ 7. Label Encoding the categorical columns and storing the trained encoder for each feature to be used in the API.
+ 8. Splitting the data into training and testing data form ML Model training and testing.
+ 9. Initializing and Training AutoSklearn Regressor. The same model was trained from 1Hr and 2Hr. The 2Hr model performed slightly better and thus was used for making the predictions.
+ 10. Custom function to calculate `RMSE`, `R2` and `Adjusted R2` score for checking the performance of the model.
+ 11. Saving the trained model and trained encoders.
