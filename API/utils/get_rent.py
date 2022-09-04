@@ -17,15 +17,17 @@ def get_rent(features, building_type_encoder, facing_encoder, furnishing_encoder
         tmp_df['water_supply'])
 
     tmp_df = tmp_df[[
-        "type", "latitude", "longitude", "lease_type", "negotiable",
-        "furnishing", "parking", "property_size", "property_age", "bathroom",
-        "facing,", "cup_board",	"floor", "total_floor", "amenities",
-        "water_supply", "building_type", "balconies"]]
+        "type", "latitude", "longitude", "lease_type", "negotiable", "furnishing",
+        "parking", "property_size", "property_age", "bathroom", "facing",
+        "cup_board", "floor_size", "total_floor_size", "amenities", "water_supply",
+        "building_type", "floor_size", "balconies"
+    ]]
 
     # temp_dict = {}
     # for key, val in zip(tmp_df.columns, tmp_df.values[0]):
     #     temp_dict[key] = val
 
+    # return list(tmp_df.columns)
     # return list(tmp_df.values[0])
 
     temp = np.array([list(tmp_df.values[0])])

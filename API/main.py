@@ -16,7 +16,9 @@ app = FastAPI()
 
 @app.get("/")
 def home():
+
     return RedirectResponse("https://machineknight-house-price.herokuapp.com/docs")
+    # return "Hello World!"
 
 
 df = pd.read_csv("./data/full_df.csv")
