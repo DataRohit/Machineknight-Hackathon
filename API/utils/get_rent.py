@@ -16,6 +16,12 @@ def get_rent(features, building_type_encoder, facing_encoder, furnishing_encoder
     tmp_df['water_supply'] = water_supply_encoder.transform(
         tmp_df['water_supply'])
 
+    tmp_df = tmp_df[[
+        "type", "latitude", "longitude", "lease_type", "negotiable",
+        "furnishing", "parking", "property_size", "property_age", "bathroom",
+        "facing,", "cup_board",	"floor", "total_floor", "amenities",
+        "water_supply", "building_type", "balconies"]]
+
     # temp_dict = {}
     # for key, val in zip(tmp_df.columns, tmp_df.values[0]):
     #     temp_dict[key] = val
