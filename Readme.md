@@ -30,13 +30,13 @@ One all the packages are installed you are ready to go.
  - For running the .ipynb file use google colab
    - For model training and testing auto-sklearn package has been used. Auto-sklearn package only supports linux based systems so use google colab.
    - Upload the the data files to runtime in colab.
-   - firstly run the code cell which install the auto-sklearn package as auto-sklearn asks for restart of Runtime.
+   - Firstly run the code cell which install the auto-sklearn package as auto-sklearn asks for restart of Runtime.
    - One done you can Rull all the cell and get the output.
  - For running the API
    - The same problem here is that auto-sklearn does not support windows.
    - But other endpoints can be tested.
    - Change directory to the API folder.
-   - and the following command ```uvicorn main:app --reload``` in the terminal to get started.
+   - Then run the following command ```uvicorn main:app --reload``` in the terminal to get the API started.
 
 **Solution to the Auto-Sklearn Problem - Luckily the servers running Google Colab and Heroku (Used for API hosting) both use Linux based servers for hosting.**
 
