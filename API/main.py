@@ -1,6 +1,8 @@
 from typing import Union
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
+
 
 import pandas as pd
 import pickle
@@ -14,7 +16,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Hello World"}
+    return RedirectResponse("https://machineknight-house-price.herokuapp.com/docs")
 
 
 df = pd.read_csv("./data/full_df.csv")
@@ -63,7 +65,8 @@ def predict_house_rent(
     water_supply_encoder = pickle.load(
         open('./encoders/water_supply_encoder.pkl', 'rb'))
 
-    model = pickle.load(open("./autosklearnregressor_model.sav", 'rb'))
+    model = pickle.load(
+        open("./models/autosklearnregressor_model_2.sav", 'rb'))
 
     predicted_rent = get_rent(
         features={

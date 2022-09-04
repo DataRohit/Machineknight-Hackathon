@@ -20,9 +20,9 @@ def get_rent(features, building_type_encoder, facing_encoder, furnishing_encoder
     # for key, val in zip(tmp_df.columns, tmp_df.values[0]):
     #     temp_dict[key] = val
 
+    # return list(tmp_df.values[0])
+
     temp = np.array([list(tmp_df.values[0])])
-    pred = float(round(list(loaded_model.predict(np.array(temp)))[0], 4))
+    pred = float(list(loaded_model.predict(np.array(temp)))[0])
 
     return pred
-
-    # return float(pred[0])
