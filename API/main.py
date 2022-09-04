@@ -66,7 +66,7 @@ def predict_house_rent(
         open('./encoders/water_supply_encoder.pkl', 'rb'))
 
     model = pickle.load(
-        open("./models/autosklearnregressor_model_2.sav", 'rb'))
+        open("./autosklearnregressor_model_2.sav", 'rb'))
 
     predicted_rent = get_rent(
         features={
